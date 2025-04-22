@@ -9,6 +9,7 @@ use crate::utils::{random_route, color_for_route};
 #[derive(Clone)]
 pub struct Vehicle {
     pub rect: Rect,
+    #[allow(dead_code)]
     pub route: String,
     pub color: Color,
     pub velocity: i32,
@@ -48,7 +49,7 @@ impl Vehicle {
         })
     }
 
-    pub fn update(&mut self, traffic_light: &TrafficLight, vehicles: &[Vehicle]) {
+    pub fn update(&mut self, traffic_light: &TrafficLight) {
         // Basic stop at red light (for simplicity, only north/south shown)
         if self.direction == "north" && self.rect.y <= 310 && !traffic_light.north_green {
             return;
