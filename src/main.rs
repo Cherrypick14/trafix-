@@ -49,7 +49,7 @@ fn main() -> Result<(), String> {
 
         traffic_light.update();
         for v in vehicles.iter_mut() {
-            v.update(&traffic_light, &vehicles);
+            v.update(&traffic_light);
         }
 
         canvas.set_draw_color(Color::RGB(30, 30, 30));
